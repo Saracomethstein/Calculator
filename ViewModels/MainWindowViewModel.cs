@@ -1,6 +1,10 @@
 ﻿namespace Calculator.ViewModels
 {
-    internal class MainWindowViewModel
+    internal class MainWindowViewModel : ViewModelBase
     {
+        public MainWindowViewModel()
+        {
+            
+        }
     }
 }

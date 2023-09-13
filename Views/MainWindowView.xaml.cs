@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Calculator.Views
+namespace Calculator
 {
     public partial class MainWindowView : Window
     {
