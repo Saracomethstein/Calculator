@@ -8,5 +8,10 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        private void Label_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

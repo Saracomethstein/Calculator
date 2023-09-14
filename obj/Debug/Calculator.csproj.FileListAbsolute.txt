@@ -15,3 +15,4 @@ C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\Calculato
 C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\Views\MainWindowView.g.cs
 C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\Views\MainWindowView.baml
+C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\App.baml

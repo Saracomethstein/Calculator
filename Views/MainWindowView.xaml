@@ -6,12 +6,328 @@
         xmlns:local="clr-namespace:Calculator.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450"
-        Width="800">
+        Height="385"
+        Width="300"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
+
     <Grid>
-        
+        <Label Style="{DynamicResource MainLabelStyle}"
+               Width="300"
+               Height="30"
+               VerticalAlignment="Top"
+               Content="Calculator"
+               VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Left"
+               FontSize="14"
+               FontFamily="Helvetica" MouseLeftButtonDown="Label_MouseLeftButtonDown"/>
+
+        <Button Style="{DynamicResource ExitButtonStyle}"
+                Width="30"
+                Height="30"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Content="X"
+                Command="{Binding GetCloseApplication}"/>
+
+        <Button Style="{DynamicResource MiniButtonStyle}"
+                Width="30"
+                Height="30"
+                Margin="240,0,30,355"
+                Content="_"
+                Command="{Binding GetMinimizedCommand}"/>
+
+        <TextBox Style="{DynamicResource MainTextBoxStyle}"
+                 Margin="10,35,10,287"
+                 FontFamily="Helvetica"
+                 FontSize="25"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Right"/>
+
+        <!--#region Button-->
+
+        <!--#region FUNC-->
+        <Button Width="50"
+                Height="40"
+                Margin="183,103,67,242"
+                Content="CE"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="C"
+                Margin="240,103,10,242"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="+"
+                Margin="240,148,10,197"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="-"
+                Margin="240,193,10,152"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="x"
+                Margin="240,238,10,107"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="/"
+                Margin="240,283,10,62"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="="
+                Margin="240,328,10,17"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="e"
+                Margin="128,103,122,242"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="PI"
+                Margin="70,103,180,242"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="("
+                Margin="70,148,180,197"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content=")"
+                Margin="128,148,122,197"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="n!"
+                Margin="185,148,65,197"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="sin"
+                Margin="10,193,240,152"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="cos"
+                Margin="10,238,240,107"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="tan"
+                Margin="10,283,240,62"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="cot"
+                Margin="10,328,240,17"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="x^2"
+                Margin="10,148,240,197"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="[x]"
+                Margin="10,103,240,242"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <!--#endregion-->
+
+        <!--#region NUMS-->
+        <Button Width="50"
+                Height="40"
+                Content="7"
+                Margin="70,193,180,152"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="8"
+                Margin="128,193,122,152"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="9"
+                Margin="183,193,67,152"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="4"
+                Margin="70,238,180,107"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="5"
+                Margin="128,238,122,107"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="6"
+                Margin="183,238,67,107"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="3"
+                Margin="70,283,180,62"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="2"
+                Margin="183,283,67,62"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="1"
+                Margin="128,283,122,62"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="0"
+                Margin="128,328,122,17"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="."
+                Margin="183,328,67,17"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="+/-"
+                Margin="70,328,180,17"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"/>
+
+        <!--#endregion-->
+
+        <!--#endregion-->
+
     </Grid>
 </Window>
