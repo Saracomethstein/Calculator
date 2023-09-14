@@ -69,7 +69,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=ClearFunc}"/>
 
         <Button Width="50"
                 Height="40"
@@ -78,7 +79,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterPlusCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -87,7 +89,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterMinusCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -96,7 +99,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterMultiplicationCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -105,7 +109,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDivisionCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -114,7 +119,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterEqualsCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -325,7 +331,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDotCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -334,7 +341,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterPlusMinusCommand}"/>
 
         <!--#endregion-->
 
