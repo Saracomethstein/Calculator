@@ -46,6 +46,7 @@
                  Margin="10,35,10,287"
                  FontFamily="Helvetica"
                  FontSize="25"
+                 Text="{Binding Path=Func}"
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Right"/>
 
@@ -296,7 +297,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitOneCommand}"/>
 
         <Button Width="50"
                 Height="40"
