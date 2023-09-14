@@ -225,7 +225,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitSevenCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -234,7 +235,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitEightCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -243,7 +245,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitNineCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -252,7 +255,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitFourCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -261,7 +265,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitFiveCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -270,30 +275,33 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitSixCommand}"/>
 
         <Button Width="50"
                 Height="40"
                 Content="3"
-                Margin="70,283,180,62"
-                FontFamily="Helvetica"
-                FontSize="14"
-                VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
-
-        <Button Width="50"
-                Height="40"
-                Content="2"
                 Margin="183,283,67,62"
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitThreeCommand}"/>
+
+        <Button Width="50"
+                Height="40"
+                Content="2"
+                Margin="128,283,122,62"
+                FontFamily="Helvetica"
+                FontSize="14"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitTwoCommand}"/>
 
         <Button Width="50"
                 Height="40"
                 Content="1"
-                Margin="128,283,122,62"
+                Margin="70,283,180,62"
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
@@ -307,7 +315,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterDigitZeroCommand}"/>
 
         <Button Width="50"
                 Height="40"

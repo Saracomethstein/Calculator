@@ -23,7 +23,7 @@ namespace Calculator.ViewModels
         {
             get { return _func; }
             set
-            { 
+            {
                 _func = value;
                 NotifyPropertyChanged(nameof(Func));
             }
@@ -57,6 +57,54 @@ namespace Calculator.ViewModels
             => _enterDigitTwoCommand ?? (_enterDigitTwoCommand = new RelayCommand(() =>
             {
                 Func += "2";
+            }));
+
+        public RelayCommand EnterDigitThreeCommand
+            => _enterDigitThreeCommand ?? (_enterDigitThreeCommand = new RelayCommand(() =>
+            {
+                Func += "3";
+            }));
+
+        public RelayCommand EnterDigitFourCommand
+            => _enterDigitFourCommand ?? (_enterDigitFourCommand = new RelayCommand(() =>
+            {
+                Func += "4";
+            }));
+
+        public RelayCommand EnterDigitFiveCommand
+            => _enterDigitFiveCommand ?? (_enterDigitFiveCommand = new RelayCommand(() =>
+            {
+                Func += "5";
+            }));
+
+        public RelayCommand EnterDigitSixCommand
+            => _enterDigitSixCommand ?? (_enterDigitSixCommand = new RelayCommand(() =>
+            {
+                Func += "6";
+            }));
+
+        public RelayCommand EnterDigitSevenCommand
+            => _enterDigitSevenCommand ?? (_enterDigitSevenCommand = new RelayCommand(() =>
+            {
+                Func += "7";
+            }));
+
+        public RelayCommand EnterDigitEightCommand
+            => _enterDigitEightCommand ?? (_enterDigitEightCommand = new RelayCommand(() =>
+            {
+                Func += "8";
+            }));
+
+        public RelayCommand EnterDigitNineCommand
+            => _enterDigitNineCommand ?? (_enterDigitNineCommand = new RelayCommand(() =>
+            {
+                Func += "9";
+            }));
+
+        public RelayCommand EnterDigitZeroCommand
+            => _enterDigitZeroCommand ?? (_enterDigitZeroCommand = new RelayCommand(() =>
+            {
+                Func += "0";
             }));
 
         #endregion
