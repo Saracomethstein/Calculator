@@ -1,4 +1,5 @@
 ﻿using Calculator.Models;
+using System;
 using System.Windows;
 
 namespace Calculator.ViewModels
@@ -25,7 +26,12 @@ namespace Calculator.ViewModels
         private RelayCommand _enterDivisionCommand;
         private RelayCommand _enterDotCommand;
         private RelayCommand _enterPlusMinusCommand;
-        private RelayCommand _clearFunc;
+        private RelayCommand _clearFuncCommand;
+        private RelayCommand _enterRegionCommand;
+        private RelayCommand _enterEndRegionCommand;
+        private RelayCommand _enterFactCommand;
+        private RelayCommand _enterPICommand;
+        private RelayCommand _enterECommand;
 
         public string Func
         {
@@ -41,12 +47,43 @@ namespace Calculator.ViewModels
 
         #region FuncButtons
 
-        public RelayCommand ClearFunc
-            => _clearFunc ?? (_clearFunc = new RelayCommand(() =>
+        public RelayCommand ClearFuncCommand
+            => _clearFuncCommand ?? (_clearFuncCommand = new RelayCommand(() =>
             {
                 Func = "";
             }));
 
+        public RelayCommand EnterRegionCommand
+            => _enterRegionCommand ?? (_enterRegionCommand = new RelayCommand(() =>
+            {
+                Func += "(";
+            }));
+
+        public RelayCommand EnterEndRegionCommand
+            => _enterEndRegionCommand ?? (_enterEndRegionCommand = new RelayCommand(() =>
+            {
+                Func += ")";
+            }));
+
+        public RelayCommand EnterFactCommand
+            => _enterFactCommand ?? (_enterFactCommand = new RelayCommand(() =>
+            {
+                Func += "!";
+            }));
+
+        public RelayCommand EnterPICommand
+            => _enterPICommand ?? (_enterPICommand = new RelayCommand(() =>
+            {
+                Func += "Pi"; // Time.
+                // Math.PI.
+            }));
+
+        public RelayCommand EnterECommand
+            => _enterECommand ?? (_enterECommand = new RelayCommand(() =>
+            {
+                Func += "E"; // Time.
+                // Math.E.
+            }));
         #endregion
 
         #region OperButtons

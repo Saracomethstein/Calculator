@@ -70,7 +70,7 @@
                 FontSize="14"
                 VerticalContentAlignment="Center"
                 HorizontalContentAlignment="Center"
-                Command="{Binding Path=ClearFunc}"/>
+                Command="{Binding Path=ClearFuncCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -129,7 +129,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterECommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -138,7 +139,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterPICommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -147,7 +149,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterRegionCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -156,7 +159,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterEndRegionCommand}"/>
 
         <Button Width="50"
                 Height="40"
@@ -165,7 +169,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterFactCommand}"/>
 
         <Button Width="50"
                 Height="40"
