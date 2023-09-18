@@ -16,3 +16,5 @@ C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\Views\Mai
 C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\Views\MainWindowView.baml
 C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\App.baml
+C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\bin\Debug\NCalc.dll
+C:\Users\adels\OneDrive\Desktop\All\Dev\C#\GitHub\Calculator\obj\Debug\Calculator.csproj.CopyComplete

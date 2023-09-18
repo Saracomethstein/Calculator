@@ -1,4 +1,5 @@
 ﻿using Calculator.Models;
+using NCalc;
 using System;
 using System.Windows;
 
@@ -41,6 +42,15 @@ namespace Calculator.ViewModels
                 _func = value;
                 NotifyPropertyChanged(nameof(Func));
             }
+        }
+
+        private void Calculate()
+        {
+            NCalc.Expression e = new NCalc.Expression(Func);
+            //e.Parameters["sin"] = new Func<double, double>(Math.Sin);
+            //e.Parameters["cos"] = new Func<double, double>(Math.Cos);
+            double resut = Convert.ToDouble(e.Evaluate());
+            Func = Convert.ToString(resut);
         }
 
         #region Command
@@ -91,8 +101,7 @@ namespace Calculator.ViewModels
         public RelayCommand EnterEqualsCommand
             => _enterEqualsCommand ?? (_enterEqualsCommand = new RelayCommand(() =>
             {
-                Func += "="; // Time.
-                // Calculate!
+                Calculate();
             }));
 
         public RelayCommand EnterPlusCommand
