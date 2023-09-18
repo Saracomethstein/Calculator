@@ -103,7 +103,7 @@ namespace Calculator.ViewModels
             {
                 Func += "sin";
             }));
-        #endregion
+        #endregion  
 
         #region OperButtons
 
