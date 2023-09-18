@@ -48,7 +48,8 @@
                  FontSize="25"
                  Text="{Binding Path=Func}"
                  VerticalContentAlignment="Center"
-                 HorizontalContentAlignment="Right"/>
+                 HorizontalContentAlignment="Right"
+                 IsReadOnly="True"/>
 
         <!--#region Button-->
 
@@ -179,7 +180,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterSinCommand}"/>
 
         <Button Width="50"
                 Height="40"

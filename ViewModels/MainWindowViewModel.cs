@@ -33,6 +33,7 @@ namespace Calculator.ViewModels
         private RelayCommand _enterFactCommand;
         private RelayCommand _enterPICommand;
         private RelayCommand _enterECommand;
+        private RelayCommand _enterSinCommand;
 
         public string Func
         {
@@ -47,8 +48,10 @@ namespace Calculator.ViewModels
         private void Calculate()
         {
             NCalc.Expression e = new NCalc.Expression(Func);
-            //e.Parameters["sin"] = new Func<double, double>(Math.Sin);
-            //e.Parameters["cos"] = new Func<double, double>(Math.Cos);
+            e.Parameters["sin"] = new Func<double, double>(Math.Sin);
+            e.Parameters["cos"] = new Func<double, double>(Math.Cos);
+            e.Parameters["Pi"] = Math.PI;
+            e.Parameters["E"] = Math.E;
             double resut = Convert.ToDouble(e.Evaluate());
             Func = Convert.ToString(resut);
         }
@@ -94,6 +97,12 @@ namespace Calculator.ViewModels
                 Func += "E"; // Time.
                 // Math.E.
             }));
+
+        public RelayCommand EnterSinCommand
+            => _enterSinCommand ?? (_enterSinCommand = new RelayCommand(() =>
+            {
+                Func += "sin";
+            }));
         #endregion
 
         #region OperButtons
@@ -101,7 +110,14 @@ namespace Calculator.ViewModels
         public RelayCommand EnterEqualsCommand
             => _enterEqualsCommand ?? (_enterEqualsCommand = new RelayCommand(() =>
             {
-                Calculate();
+                try
+                {
+                    Calculate();
+                }
+                catch
+                {
+                    Func = "Error";
+                }
             }));
 
         public RelayCommand EnterPlusCommand
