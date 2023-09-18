@@ -48,12 +48,42 @@ namespace Calculator.ViewModels
         private void Calculate()
         {
             NCalc.Expression e = new NCalc.Expression(Func);
-            e.Parameters["sin"] = new Func<double, double>(Math.Sin);
-            e.Parameters["cos"] = new Func<double, double>(Math.Cos);
-            e.Parameters["Pi"] = Math.PI;
-            e.Parameters["E"] = Math.E;
-            double resut = Convert.ToDouble(e.Evaluate());
-            Func = Convert.ToString(resut);
+
+            e.EvaluateFunction += (name, argc) =>
+            {
+                double argValue = Convert.ToDouble(argc.Parameters[0].Evaluate()); // ???.
+                switch (name)
+                {
+                    case "sin":
+                        argc.Result = Math.Sin(argValue);
+                        break;
+                    case "cos":
+                        argc.Result = Math.Cos(argValue);
+                        break;
+                    case "tan":
+                        argc.Result = Math.Tan(argValue);
+                        break;
+                    case "cot":
+                        argc.Result = 1.0 / Math.Tan(argValue);
+                        break;
+                    case "pi":
+                        argc.Result = Math.PI;
+                        break;
+                    case "e":
+                        argc.Result = Math.E;
+                        break;
+                }
+            };
+
+            try
+            {
+                object result = e.Evaluate();
+                Func = Convert.ToString(result);
+            }
+            catch
+            {
+                Func = "Error";
+            }
         }
 
         #region Command
@@ -87,15 +117,13 @@ namespace Calculator.ViewModels
         public RelayCommand EnterPICommand
             => _enterPICommand ?? (_enterPICommand = new RelayCommand(() =>
             {
-                Func += "Pi"; // Time.
-                // Math.PI.
+                Func += "pi";
             }));
 
         public RelayCommand EnterECommand
             => _enterECommand ?? (_enterECommand = new RelayCommand(() =>
             {
-                Func += "E"; // Time.
-                // Math.E.
+                Func += "e";
             }));
 
         public RelayCommand EnterSinCommand
@@ -110,14 +138,7 @@ namespace Calculator.ViewModels
         public RelayCommand EnterEqualsCommand
             => _enterEqualsCommand ?? (_enterEqualsCommand = new RelayCommand(() =>
             {
-                try
-                {
-                    Calculate();
-                }
-                catch
-                {
-                    Func = "Error";
-                }
+                Calculate();
             }));
 
         public RelayCommand EnterPlusCommand

@@ -135,7 +135,7 @@
 
         <Button Width="50"
                 Height="40"
-                Content="PI"
+                Content="π"
                 Margin="70,103,180,242"
                 FontFamily="Helvetica"
                 FontSize="14"
