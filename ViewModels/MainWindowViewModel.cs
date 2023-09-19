@@ -28,6 +28,7 @@ namespace Calculator.ViewModels
         private RelayCommand _enterDotCommand;
         private RelayCommand _enterPlusMinusCommand;
         private RelayCommand _clearFuncCommand;
+        private RelayCommand _clearAllFuncCommand;
         private RelayCommand _enterRegionCommand;
         private RelayCommand _enterEndRegionCommand;
         private RelayCommand _enterFactCommand;
@@ -102,6 +103,12 @@ namespace Calculator.ViewModels
             => _clearFuncCommand ?? (_clearFuncCommand = new RelayCommand(() =>
             {
                 Backspace();
+            }));
+
+        public RelayCommand ClearAllFuncCommand
+            => _clearAllFuncCommand ?? (_clearAllFuncCommand = new RelayCommand(() =>
+            {
+                Func = "";
             }));
 
         public RelayCommand EnterRegionCommand

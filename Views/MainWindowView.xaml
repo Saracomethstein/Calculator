@@ -61,7 +61,8 @@
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=ClearAllFuncCommand}"/>
 
         <Button Width="50"
                 Height="40"
