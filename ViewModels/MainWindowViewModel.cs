@@ -1,6 +1,7 @@
 ﻿using Calculator.Models;
 using NCalc;
 using System;
+using System.Runtime;
 using System.Windows;
 
 namespace Calculator.ViewModels
@@ -38,6 +39,7 @@ namespace Calculator.ViewModels
         private RelayCommand _enterCosCommand;
         private RelayCommand _enterTanCommnad;
         private RelayCommand _enterCotCommand;
+        private RelayCommand _enterPowCommand;
 
         public string Func
         {
@@ -58,6 +60,7 @@ namespace Calculator.ViewModels
             e.EvaluateFunction += (name, argc) =>
             {
                 double radian = Convert.ToDouble(argc.Parameters[0].Evaluate());
+                int fact = Convert.ToInt32(argc.Parameters[0].Evaluate());
                 radian = radian * Math.PI / 180;
                 switch (name)
                 {
@@ -68,13 +71,33 @@ namespace Calculator.ViewModels
                         argc.Result = Math.Round(Math.Cos(radian), 6);
                         break;
                     case "tan":
-                        argc.Result = Math.Round(Math.Tan(radian), 6); // Error: 90 and 270
+                        argc.Result = Math.Round(Math.Tan(radian), 6); // Error: 90 and 270 grad
                         break;
                     case "cot":
                         argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(radian), 6), 6);
                         break;
+                    case "!":
+                        int result = 1;
+                        for (int i = 0; i < fact; ++i)
+                        {
+                            result *= fact;
+                        }
+                        argc.Result = result;
+                        break;
                 }
             };
+
+            //e.EvaluateFunction += (name, args) =>
+            //{
+            //    if (name == "pow")
+            //    {
+            //        double baseValue = Convert.ToDouble(args.Parameters[0].Evaluate());
+            //        double exponent = Convert.ToDouble(args.Parameters[1].Evaluate());
+
+            //        double result = Math.Pow(baseValue, exponent);
+            //        args.Result = result;
+            //    }
+            //};
 
             try
             {
@@ -85,6 +108,16 @@ namespace Calculator.ViewModels
             {
                 Func = "Error";
             }
+        }
+
+        private double Factorial(double fact)
+        {
+            for (int i = 0; i < fact; ++i)
+            {
+                fact += i * fact;
+            }
+
+            return fact;
         }
 
         private void Backspace()
@@ -163,6 +196,12 @@ namespace Calculator.ViewModels
             => _enterCotCommand ?? (_enterCotCommand = new RelayCommand(() =>
             {
                 Func += "cot";
+            }));
+
+        public RelayCommand EnterPowCommand
+            => _enterPowCommand ?? (_enterPowCommand = new RelayCommand(() =>
+            {
+                Func += "pow";
             }));
         #endregion  
 
