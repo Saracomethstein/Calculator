@@ -51,7 +51,7 @@ namespace Calculator.ViewModels
         private void Calculate()
         {
             NCalc.Expression e = new NCalc.Expression(Func);
-            e.Parameters["pi"] = Math.PI; // π.
+            e.Parameters["pi"] = Math.PI;
             e.Parameters["e"] = Math.E;
 
             e.EvaluateFunction += (name, argc) =>
