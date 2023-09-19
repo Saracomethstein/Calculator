@@ -86,6 +86,14 @@ namespace Calculator.ViewModels
             }
         }
 
+        private void Backspace()
+        {
+            if(Func.Length > 0)
+            {
+                Func = Func.Substring(0, Func.Length - 1);
+            }
+        }
+
         #region Command
 
         #region FuncButtons
@@ -93,7 +101,7 @@ namespace Calculator.ViewModels
         public RelayCommand ClearFuncCommand
             => _clearFuncCommand ?? (_clearFuncCommand = new RelayCommand(() =>
             {
-                Func = "";
+                Backspace();
             }));
 
         public RelayCommand EnterRegionCommand
