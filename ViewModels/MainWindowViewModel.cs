@@ -34,6 +34,9 @@ namespace Calculator.ViewModels
         private RelayCommand _enterPICommand;
         private RelayCommand _enterECommand;
         private RelayCommand _enterSinCommand;
+        private RelayCommand _enterCosCommand;
+        private RelayCommand _enterTanCommnad;
+        private RelayCommand _enterCotCommand;
 
         public string Func
         {
@@ -48,29 +51,26 @@ namespace Calculator.ViewModels
         private void Calculate()
         {
             NCalc.Expression e = new NCalc.Expression(Func);
+            e.Parameters["pi"] = Math.PI; // π.
+            e.Parameters["e"] = Math.E;
 
             e.EvaluateFunction += (name, argc) =>
             {
-                double argValue = Convert.ToDouble(argc.Parameters[0].Evaluate()); // ???.
+                double radian = Convert.ToDouble(argc.Parameters[0].Evaluate());
+                radian = radian * Math.PI / 180;
                 switch (name)
                 {
                     case "sin":
-                        argc.Result = Math.Sin(argValue);
+                        argc.Result = Math.Round(Math.Sin(radian), 6);
                         break;
                     case "cos":
-                        argc.Result = Math.Cos(argValue);
+                        argc.Result = Math.Round(Math.Cos(radian), 6);
                         break;
                     case "tan":
-                        argc.Result = Math.Tan(argValue);
+                        argc.Result = Math.Round(Math.Tan(radian), 6); // Error: 90 and 270
                         break;
                     case "cot":
-                        argc.Result = 1.0 / Math.Tan(argValue);
-                        break;
-                    case "pi":
-                        argc.Result = Math.PI;
-                        break;
-                    case "e":
-                        argc.Result = Math.E;
+                        argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(radian), 6), 6);
                         break;
                 }
             };
@@ -130,6 +130,24 @@ namespace Calculator.ViewModels
             => _enterSinCommand ?? (_enterSinCommand = new RelayCommand(() =>
             {
                 Func += "sin";
+            }));
+
+        public RelayCommand EnterCosCommand
+            => _enterCosCommand ?? (_enterCosCommand = new RelayCommand(() =>
+            {
+                Func += "cos";
+            }));
+
+        public RelayCommand EnterTanCommand
+            => _enterTanCommnad ?? (_enterTanCommnad = new RelayCommand(() =>
+            {
+                Func += "tan";
+            }));
+
+        public RelayCommand EnterCotCommand
+            => _enterCotCommand ?? (_enterCotCommand = new RelayCommand(() =>
+            {
+                Func += "cot";
             }));
         #endregion  
 
