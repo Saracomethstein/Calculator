@@ -17,6 +17,7 @@
     </Window.DataContext>
 
     <Grid>
+        
         <Label Style="{DynamicResource MainLabelStyle}"
                Width="300"
                Height="30"
@@ -54,7 +55,8 @@
         <!--#region Button-->
 
         <!--#region FUNC-->
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Margin="183,103,67,242"
                 Content="CE"
@@ -64,17 +66,20 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=ClearAllFuncCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
-                Content="C"
                 Margin="240,103,10,242"
                 FontFamily="Helvetica"
                 FontSize="14"
+                Content="⌫"
                 VerticalContentAlignment="Center"
                 HorizontalContentAlignment="Center"
-                Command="{Binding Path=ClearFuncCommand}"/>
+                Command="{Binding Path=ClearFuncCommand}">
+        </Button>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="+"
                 Margin="240,148,10,197"
@@ -84,7 +89,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterPlusCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="-"
                 Margin="240,193,10,152"
@@ -94,7 +100,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterMinusCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="x"
                 Margin="240,238,10,107"
@@ -104,7 +111,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterMultiplicationCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="/"
                 Margin="240,283,10,62"
@@ -114,7 +122,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDivisionCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="="
                 Margin="240,328,10,17"
@@ -124,7 +133,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterEqualsCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="e"
                 Margin="128,103,122,242"
@@ -134,7 +144,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterECommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="π"
                 Margin="70,103,180,242"
@@ -144,7 +155,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterPICommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="("
                 Margin="70,148,180,197"
@@ -154,7 +166,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterRegionCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content=")"
                 Margin="128,148,122,197"
@@ -164,9 +177,10 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterEndRegionCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
-                Content="n!"
+                Content="!n"
                 Margin="185,148,65,197"
                 FontFamily="Helvetica"
                 FontSize="14"
@@ -174,7 +188,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterFactCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="sin"
                 Margin="10,193,240,152"
@@ -184,7 +199,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterSinCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="cos"
                 Margin="10,238,240,107"
@@ -194,7 +210,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterCosCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="tan"
                 Margin="10,283,240,62"
@@ -204,7 +221,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterTanCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="cot"
                 Margin="10,328,240,17"
@@ -214,7 +232,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterCotCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="x^2"
                 Margin="10,148,240,197"
@@ -224,19 +243,22 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterPowCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
-                Content="[x]"
+                Content="√"
                 Margin="10,103,240,242"
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterSqrtCommand}"/>
 
         <!--#endregion-->
 
         <!--#region NUMS-->
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="7"
                 Margin="70,193,180,152"
@@ -246,7 +268,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitSevenCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="8"
                 Margin="128,193,122,152"
@@ -256,7 +279,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitEightCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="9"
                 Margin="183,193,67,152"
@@ -266,7 +290,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitNineCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="4"
                 Margin="70,238,180,107"
@@ -276,7 +301,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitFourCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="5"
                 Margin="128,238,122,107"
@@ -286,7 +312,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitFiveCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="6"
                 Margin="183,238,67,107"
@@ -296,7 +323,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitSixCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="3"
                 Margin="183,283,67,62"
@@ -306,7 +334,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitThreeCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="2"
                 Margin="128,283,122,62"
@@ -316,7 +345,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitTwoCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="1"
                 Margin="70,283,180,62"
@@ -326,7 +356,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitOneCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource NumsButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="0"
                 Margin="128,328,122,17"
@@ -336,7 +367,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDigitZeroCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="."
                 Margin="183,328,67,17"
@@ -346,7 +378,8 @@
                 HorizontalContentAlignment="Center"
                 Command="{Binding Path=EnterDotCommand}"/>
 
-        <Button Width="50"
+        <Button Style="{DynamicResource FuncButtonStyle}"
+                Width="50"
                 Height="40"
                 Content="+/-"
                 Margin="70,328,180,17"

@@ -8,6 +8,7 @@ namespace Calculator.ViewModels
 {
     internal class MainWindowViewModel : ViewModelBase
     {
+        #region Private Func
         private string _func;
         private RelayCommand _getCloseApplication;
         private RelayCommand _getMinimizedCommand;
@@ -40,6 +41,8 @@ namespace Calculator.ViewModels
         private RelayCommand _enterTanCommnad;
         private RelayCommand _enterCotCommand;
         private RelayCommand _enterPowCommand;
+        private RelayCommand _enterSqrtCommand;
+        #endregion
 
         public string Func
         {
@@ -61,7 +64,10 @@ namespace Calculator.ViewModels
             {
                 double radian = Convert.ToDouble(argc.Parameters[0].Evaluate());
                 int fact = Convert.ToInt32(argc.Parameters[0].Evaluate());
+                double sqrt = Convert.ToDouble(argc.Parameters[0].Evaluate());
+                int secondNum = Convert.ToInt32(argc.Parameters[0].Evaluate());
                 radian = radian * Math.PI / 180;
+                
                 switch (name)
                 {
                     case "sin":
@@ -76,33 +82,26 @@ namespace Calculator.ViewModels
                     case "cot":
                         argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(radian), 6), 6);
                         break;
+                    case "sqrt":
+                        argc.Result = Math.Sqrt(sqrt);
+                        break;
                     case "!":
-                        int result = 1;
-                        for (int i = 0; i < fact; ++i)
-                        {
-                            result *= fact;
-                        }
-                        argc.Result = result;
+                        argc.Result = Factorial(fact);
                         break;
                 }
             };
 
-            //e.EvaluateFunction += (name, args) =>
-            //{
-            //    if (name == "pow")
-            //    {
-            //        double baseValue = Convert.ToDouble(args.Parameters[0].Evaluate());
-            //        double exponent = Convert.ToDouble(args.Parameters[1].Evaluate());
-
-            //        double result = Math.Pow(baseValue, exponent);
-            //        args.Result = result;
-            //    }
-            //};
-
             try
             {
                 object result = e.Evaluate();
-                Func = Convert.ToString(result);
+                if (result is double)
+                {
+                    Func = Convert.ToString(result);
+                }
+                else
+                {
+                    Func = "Cannot divide by zero";
+                }
             }
             catch
             {
@@ -202,6 +201,12 @@ namespace Calculator.ViewModels
             => _enterPowCommand ?? (_enterPowCommand = new RelayCommand(() =>
             {
                 Func += "pow";
+            }));
+
+        public RelayCommand EnterSqrtCommand
+            => _enterSqrtCommand ?? (_enterSqrtCommand = new RelayCommand(() =>
+            {
+                Func += "sqrt";
             }));
         #endregion  
 
