@@ -41,6 +41,7 @@ namespace Calculator.ViewModels
         private RelayCommand _enterTanCommnad;
         private RelayCommand _enterCotCommand;
         private RelayCommand _enterPowCommand;
+        private RelayCommand _enterSqrtCommand;
         #endregion
 
         public string Func
@@ -63,6 +64,7 @@ namespace Calculator.ViewModels
             {
                 double radian = Convert.ToDouble(argc.Parameters[0].Evaluate());
                 int fact = Convert.ToInt32(argc.Parameters[0].Evaluate());
+                double sqrt = Convert.ToDouble(argc.Parameters[0].Evaluate());
                 radian = radian * Math.PI / 180;
                 switch (name)
                 {
@@ -85,6 +87,9 @@ namespace Calculator.ViewModels
                             result *= fact;
                         }
                         argc.Result = result;
+                        break;
+                    case "sqrt":
+                        argc.Result = Math.Sqrt(sqrt);
                         break;
                 }
             };
@@ -204,6 +209,12 @@ namespace Calculator.ViewModels
             => _enterPowCommand ?? (_enterPowCommand = new RelayCommand(() =>
             {
                 Func += "pow";
+            }));
+
+        public RelayCommand EnterSqrtCommand
+            => _enterSqrtCommand ?? (_enterSqrtCommand = new RelayCommand(() =>
+            {
+                Func += "sqrt";
             }));
         #endregion  
 

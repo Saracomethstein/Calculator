@@ -17,6 +17,7 @@
     </Window.DataContext>
 
     <Grid>
+        
         <Label Style="{DynamicResource MainLabelStyle}"
                Width="300"
                Height="30"
@@ -226,12 +227,13 @@
 
         <Button Width="50"
                 Height="40"
-                Content="[x]"
+                Content="√"
                 Margin="10,103,240,242"
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
-                HorizontalContentAlignment="Center"/>
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=EnterSqrtCommand}"/>
 
         <!--#endregion-->
 
