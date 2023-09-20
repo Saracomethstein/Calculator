@@ -65,7 +65,9 @@ namespace Calculator.ViewModels
                 double radian = Convert.ToDouble(argc.Parameters[0].Evaluate());
                 int fact = Convert.ToInt32(argc.Parameters[0].Evaluate());
                 double sqrt = Convert.ToDouble(argc.Parameters[0].Evaluate());
+                int divNull = Convert.ToInt32(argc.Parameters[0].Evaluate());
                 radian = radian * Math.PI / 180;
+                
                 switch (name)
                 {
                     case "sin":
@@ -80,13 +82,12 @@ namespace Calculator.ViewModels
                     case "cot":
                         argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(radian), 6), 6);
                         break;
-                    case "!":
-                        argc.Result = Factorial(fact);
-                        break;
                     case "sqrt":
                         argc.Result = Math.Sqrt(sqrt);
                         break;
-                    // Cannot divide by zero.
+                    case "!":
+                        argc.Result = Factorial(fact);
+                        break;
                 }
             };
 
