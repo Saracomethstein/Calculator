@@ -8,6 +8,7 @@ namespace Calculator.ViewModels
 {
     internal class MainWindowViewModel : ViewModelBase
     {
+        #region Private Func
         private string _func;
         private RelayCommand _getCloseApplication;
         private RelayCommand _getMinimizedCommand;
@@ -40,6 +41,7 @@ namespace Calculator.ViewModels
         private RelayCommand _enterTanCommnad;
         private RelayCommand _enterCotCommand;
         private RelayCommand _enterPowCommand;
+        #endregion
 
         public string Func
         {
