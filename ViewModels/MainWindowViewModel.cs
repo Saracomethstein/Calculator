@@ -81,30 +81,14 @@ namespace Calculator.ViewModels
                         argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(radian), 6), 6);
                         break;
                     case "!":
-                        int result = 1;
-                        for (int i = 0; i < fact; ++i)
-                        {
-                            result *= fact;
-                        }
-                        argc.Result = result;
+                        argc.Result = Factorial(fact);
                         break;
                     case "sqrt":
                         argc.Result = Math.Sqrt(sqrt);
                         break;
+                    // Cannot divide by zero.
                 }
             };
-
-            //e.EvaluateFunction += (name, args) =>
-            //{
-            //    if (name == "pow")
-            //    {
-            //        double baseValue = Convert.ToDouble(args.Parameters[0].Evaluate());
-            //        double exponent = Convert.ToDouble(args.Parameters[1].Evaluate());
-
-            //        double result = Math.Pow(baseValue, exponent);
-            //        args.Result = result;
-            //    }
-            //};
 
             try
             {
