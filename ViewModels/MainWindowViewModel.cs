@@ -65,7 +65,7 @@ namespace Calculator.ViewModels
                 double radian = Convert.ToDouble(argc.Parameters[0].Evaluate());
                 int fact = Convert.ToInt32(argc.Parameters[0].Evaluate());
                 double sqrt = Convert.ToDouble(argc.Parameters[0].Evaluate());
-                int divNull = Convert.ToInt32(argc.Parameters[0].Evaluate());
+                int secondNum = Convert.ToInt32(argc.Parameters[0].Evaluate());
                 radian = radian * Math.PI / 180;
                 
                 switch (name)
@@ -94,7 +94,14 @@ namespace Calculator.ViewModels
             try
             {
                 object result = e.Evaluate();
-                Func = Convert.ToString(result);
+                if (result is double)
+                {
+                    Func = Convert.ToString(result);
+                }
+                else
+                {
+                    Func = "Cannot divide by zero";
+                }
             }
             catch
             {
