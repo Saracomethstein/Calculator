@@ -381,13 +381,13 @@
         <Button Style="{DynamicResource FuncButtonStyle}"
                 Width="50"
                 Height="40"
-                Content="+/-"
+                Content=","
                 Margin="70,328,180,17"
                 FontFamily="Helvetica"
                 FontSize="14"
                 VerticalContentAlignment="Center"
                 HorizontalContentAlignment="Center"
-                Command="{Binding Path=EnterPlusMinusCommand}"/>
+                Command="{Binding Path=EnterCommaCommand}"/>
 
         <!--#endregion-->
 

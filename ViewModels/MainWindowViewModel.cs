@@ -28,7 +28,7 @@ namespace Calculator.ViewModels
         private RelayCommand _enterMultiplicationCommand;
         private RelayCommand _enterDivisionCommand;
         private RelayCommand _enterDotCommand;
-        private RelayCommand _enterPlusMinusCommand;
+        private RelayCommand _enterCommaCommand;
         private RelayCommand _clearFuncCommand;
         private RelayCommand _clearAllFuncCommand;
         private RelayCommand _enterRegionCommand;
@@ -62,31 +62,30 @@ namespace Calculator.ViewModels
 
             e.EvaluateFunction += (name, argc) =>
             {
-                double radian = Convert.ToDouble(argc.Parameters[0].Evaluate());
-                int fact = Convert.ToInt32(argc.Parameters[0].Evaluate());
-                double sqrt = Convert.ToDouble(argc.Parameters[0].Evaluate());
-                int secondNum = Convert.ToInt32(argc.Parameters[0].Evaluate());
-                radian = radian * Math.PI / 180;
+                double num = Convert.ToDouble(argc.Parameters[0].Evaluate());
                 
                 switch (name)
                 {
                     case "sin":
-                        argc.Result = Math.Round(Math.Sin(radian), 6);
+                        argc.Result = Math.Round(Math.Sin(num * Math.PI / 180), 6);
                         break;
                     case "cos":
-                        argc.Result = Math.Round(Math.Cos(radian), 6);
+                        argc.Result = Math.Round(Math.Cos(num * Math.PI / 180), 6);
                         break;
                     case "tan":
-                        argc.Result = Math.Round(Math.Tan(radian), 6); // Error: 90 and 270 grad
+                        argc.Result = Math.Round(Math.Tan(num * Math.PI / 180), 6); // Error: 90 and 270 grad
                         break;
                     case "cot":
-                        argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(radian), 6), 6);
+                        argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(num * Math.PI / 180), 6), 6);
                         break;
                     case "sqrt":
-                        argc.Result = Math.Sqrt(sqrt);
+                        argc.Result = Math.Sqrt(num);
                         break;
                     case "fact":
-                        argc.Result = Factorial(fact);
+                        argc.Result = Factorial((int)num);
+                        break;
+                    case "pow":
+                        argc.Result = Math.Pow(num, 2);
                         break;
                 }
             };
@@ -243,10 +242,10 @@ namespace Calculator.ViewModels
                 Func += ".";
             }));
 
-        public RelayCommand EnterPlusMinusCommand
-            => _enterPlusMinusCommand ?? (_enterPlusMinusCommand = new RelayCommand(() =>
+        public RelayCommand EnterCommaCommand
+            => _enterCommaCommand ?? (_enterCommaCommand = new RelayCommand(() =>
             {
-                Func += "-";
+                Func += ",";
             }));
         #endregion
 
