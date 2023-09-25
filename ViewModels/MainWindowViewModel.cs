@@ -60,32 +60,32 @@ namespace Calculator.ViewModels
             e.Parameters["pi"] = Math.PI;
             e.Parameters["e"] = Math.E;
 
-            e.EvaluateFunction += (name, argc) =>
+            e.EvaluateFunction += (name, args) =>
             {
-                double num = Convert.ToDouble(argc.Parameters[0].Evaluate());
+                double num = Convert.ToDouble(args.Parameters[0].Evaluate());
                 
                 switch (name)
                 {
                     case "sin":
-                        argc.Result = Math.Round(Math.Sin(num * Math.PI / 180), 6);
+                        args.Result = Math.Round(Math.Sin(num * Math.PI / 180), 6);
                         break;
                     case "cos":
-                        argc.Result = Math.Round(Math.Cos(num * Math.PI / 180), 6);
+                        args.Result = Math.Round(Math.Cos(num * Math.PI / 180), 6);
                         break;
                     case "tan":
-                        argc.Result = Math.Round(Math.Tan(num * Math.PI / 180), 6); // Error: 90 and 270 grad
+                        args.Result = Math.Round(Math.Tan(num * Math.PI / 180), 6);
                         break;
                     case "cot":
-                        argc.Result = Math.Round(1.0 / Math.Round(Math.Tan(num * Math.PI / 180), 6), 6);
+                        args.Result = Math.Round(1.0 / Math.Round(Math.Tan(num * Math.PI / 180), 6), 6);
                         break;
                     case "sqrt":
-                        argc.Result = Math.Sqrt(num);
+                        args.Result = Math.Sqrt(num);
                         break;
                     case "fact":
-                        argc.Result = Factorial((int)num);
+                        args.Result = Factorial((int)num);
                         break;
                     case "pow":
-                        argc.Result = Math.Pow(num, 2);
+                        args.Result = Math.Pow(num, 2);
                         break;
                 }
             };
