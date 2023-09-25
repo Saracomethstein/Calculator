@@ -1,7 +1,5 @@
 ﻿using Calculator.Models;
-using NCalc;
 using System;
-using System.Runtime;
 using System.Windows;
 
 namespace Calculator.ViewModels
@@ -63,7 +61,7 @@ namespace Calculator.ViewModels
             e.EvaluateFunction += (name, args) =>
             {
                 double num = Convert.ToDouble(args.Parameters[0].Evaluate());
-                
+
                 switch (name)
                 {
                     case "sin":
@@ -115,7 +113,7 @@ namespace Calculator.ViewModels
 
         private void Backspace()
         {
-            if(Func.Length > 0)
+            if (Func.Length > 0)
             {
                 Func = Func.Substring(0, Func.Length - 1);
             }
