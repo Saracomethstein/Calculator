@@ -85,7 +85,7 @@ namespace Calculator.ViewModels
                     case "sqrt":
                         argc.Result = Math.Sqrt(sqrt);
                         break;
-                    case "!":
+                    case "fact":
                         argc.Result = Factorial(fact);
                         break;
                 }
@@ -94,14 +94,7 @@ namespace Calculator.ViewModels
             try
             {
                 object result = e.Evaluate();
-                if (result is double)
-                {
-                    Func = Convert.ToString(result);
-                }
-                else
-                {
-                    Func = "Cannot divide by zero";
-                }
+                Func = Convert.ToString(result);
             }
             catch
             {
@@ -109,14 +102,16 @@ namespace Calculator.ViewModels
             }
         }
 
-        private double Factorial(double fact)
+        private int Factorial(int fact)
         {
+            int result = 1;
+
             for (int i = 0; i < fact; ++i)
             {
-                fact += i * fact;
+                result += result * i;
             }
 
-            return fact;
+            return result;
         }
 
         private void Backspace()
@@ -158,7 +153,7 @@ namespace Calculator.ViewModels
         public RelayCommand EnterFactCommand
             => _enterFactCommand ?? (_enterFactCommand = new RelayCommand(() =>
             {
-                Func += "!";
+                Func += "fact";
             }));
 
         public RelayCommand EnterPICommand
